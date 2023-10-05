@@ -1,0 +1,19 @@
+.root{ /* will be applied to everything in the highest level container */
+    -fx-font-size: 20px;
+    -fx-font-family: sans-serif;
+    -fx-background-image: url("images/background.jpg");
+    -fx-background-size: cover;
+}
+
+.label{
+    -fx-text-fill: white;
+}
+
+#header{
+    -fx-font-size: 40px;
+}
+
+.button{
+    -fx-background-radius: 20pt;
+    -fx-border-radius: 20pt;
+}
