@@ -7,12 +7,15 @@
 package com.example.f23assignment1comp1011;
 
 public class VideoGameSales {
+
+    private int id;
     private String gameName, platform, genre, publisher;
     private int yearOfRelease;
     private double naSales, euSales, jpSales, otherSales, globalSales;
 
-    public VideoGameSales(String gameName, String platform, int yearOfRelease, String genre, String publisher,
+    public VideoGameSales(int id, String gameName, String platform, int yearOfRelease, String genre, String publisher,
                           double naSales, double euSales, double jpSales, double otherSales, double globalSales) {
+        setId(id);
         setGameName(gameName);
         setPlatform(platform);
         setYearOfRelease(yearOfRelease);
@@ -23,6 +26,14 @@ public class VideoGameSales {
         setJpSales(jpSales);
         setOtherSales(otherSales);
         setGlobalSales(globalSales);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getGameName() {

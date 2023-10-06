@@ -24,3 +24,60 @@
     -fx-background-radius: 20pt;
     -fx-border-radius: 20pt;
 }
+
+.chart-legend {
+    -fx-background-color: #8503f9; /* Set legend background color */
+}
+
+/* Styling the TableView */
+.table-view {
+    -fx-background-color: #f0f0f0; /* Background color for the table */
+}
+
+/* Styling the TableColumns */
+.table-column {
+    -fx-background-color: #4CAF50; /* Background color for headers */
+    -fx-text-fill: white; /* Text color for headers */
+    -fx-font-size: 14px;
+}
+
+/* Alternating row colors */
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9; /* Alternate row background color */
+}
+
+/* Hover effect on rows */
+.table-row-cell:hover {
+    -fx-background-color: #e0e0e0; /* Hovered row background color */
+}
+
+/* Styling the cell contents */
+.table-cell {
+    -fx-text-fill: #333; /* Text color for cell contents */
+    -fx-alignment: center; /* Alignment of cell contents */
+}
+
+/* Highlighted cell */
+.table-cell:filled:selected {
+    -fx-background-color: #2196F3; /* Selected cell background color */
+    -fx-text-fill: white; /* Selected cell text color */
+}
+
+/* Styling the scrollbar */
+.scroll-bar:vertical {
+    -fx-background-color: #e0e0e0; /* Scrollbar background color */
+}
+
+/* Custom styling for scrollbar buttons (up and down) */
+.increment-button, .decrement-button {
+    -fx-background-color: #4CAF50; /* Scrollbar button background color */
+    -fx-background-radius: 0; /* Remove button border radius */
+}
+
+/* Hide vertical scrollbar track */
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+/* Custom styling for scrollbar thumb (dr
+
