@@ -1,3 +1,9 @@
+/**
+ * Full Name: Samarpreet Singh
+ * Student #: 200510621
+ * CRN: 11346 (Monday, 9am class)
+ * Assignment 1 - COMP 1011
+ */
 package com.example.f23assignment1comp1011;
 
 import javafx.application.Application;
@@ -11,7 +17,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml")); //fxml loader is special class, purpose is to connect the fxml layout file
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Video Game Sales by Platform!");
         stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // icon taken from: https://www.flaticon.com/free-icon/sales_2040672

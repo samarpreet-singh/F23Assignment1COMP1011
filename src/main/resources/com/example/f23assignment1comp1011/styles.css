@@ -1,9 +1,15 @@
+/*
+ * Full Name: Samarpreet Singh
+ * Student #: 200510621
+ * CRN: 11346 (Monday, 9am class)
+ * Assignment 1 - COMP 1011
+ */
+
 .root{ /* will be applied to everything in the highest level container */
     -fx-font-size: 20px;
     -fx-font-family: sans-serif;
     -fx-background-image: url("images/background.png");
     -fx-background-size: cover;
-    -fx-background-color: rgba(0, 0, 0, 0.5);
 }
 
 .label{

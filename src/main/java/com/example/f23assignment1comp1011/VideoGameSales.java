@@ -1,10 +1,17 @@
+/**
+ * Full Name: Samarpreet Singh
+ * Student #: 200510621
+ * CRN: 11346 (Monday, 9am class)
+ * Assignment 1 - COMP 1011
+ */
 package com.example.f23assignment1comp1011;
 
 public class VideoGameSales {
-    private String gameName, platform, yearOfRelease, genre, publisher;
+    private String gameName, platform, genre, publisher;
+    private int yearOfRelease;
     private double naSales, euSales, jpSales, otherSales, globalSales;
 
-    public VideoGameSales(String gameName, String platform, String yearOfRelease, String genre, String publisher,
+    public VideoGameSales(String gameName, String platform, int yearOfRelease, String genre, String publisher,
                           double naSales, double euSales, double jpSales, double otherSales, double globalSales) {
         setGameName(gameName);
         setPlatform(platform);
@@ -34,11 +41,11 @@ public class VideoGameSales {
         this.platform = platform;
     }
 
-    public String getYearOfRelease() {
+    public int getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public void setYearOfRelease(String yearOfRelease) {
+    public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
 
