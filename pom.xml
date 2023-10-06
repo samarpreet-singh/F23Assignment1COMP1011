@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>F23COMP1011TasksS2</artifactId>
+  <artifactId>F23Assignment1COMP1011</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>F23COMP1011TasksS2</name>
+  <name>F23Assignment1COMP1011</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,7 +67,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.f23comp1011taskss2/com.example.f23comp1011taskss2.Main
+              <mainClass>com.example.f23assignment1comp1011/com.example.f23assignment1comp1011.Main
               </mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
