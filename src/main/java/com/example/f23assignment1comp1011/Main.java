@@ -14,7 +14,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml")); //fxml loader is special class, purpose is to connect the fxml layout file
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Video Game Sales by Platform!");
-        stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // using this method it knows the project structure. getResourcesAsStream creates a relative path and goes to the resources folder
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // icon taken from: https://www.flaticon.com/free-icon/sales_2040672
         stage.setScene(scene);
         stage.show();
     }

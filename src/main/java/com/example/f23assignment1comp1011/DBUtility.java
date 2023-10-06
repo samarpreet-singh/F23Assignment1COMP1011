@@ -18,7 +18,7 @@ public class DBUtility {
      * 3306 -> Port Number of the MySQL Server
      * F23COMP1011Monday -> database name
      */
-    public static String connectURL = "jdbc:mysql://172.31.22.43:3306";
+    public static String connectURL = "jdbc:mysql://172.31.22.43:3306/Samarpreet200510621";
 
     /**
      * This method will return a list of users from the database
