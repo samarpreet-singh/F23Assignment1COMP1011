@@ -109,17 +109,17 @@ public class DBUtility {
                         resultSet.getDouble("global_sales")));
             }
 
-            idCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Integer>("id"));
-            gameNameCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, String>("gameName"));
-            platformCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, String>("platform"));
-            releaseYearCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Integer>("yearOfRelease"));
-            genreCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, String>("genre"));
-            publisherCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, String>("publisher"));
-            naSalesCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Double>("naSales"));
-            euSalesCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Double>("euSales"));
-            jpSalesCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Double>("jpSales"));
-            otherSalesCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Double>("otherSales"));
-            globalSalesCol.setCellValueFactory(new PropertyValueFactory<VideoGameSales, Double>("globalSales"));
+            idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+            gameNameCol.setCellValueFactory(new PropertyValueFactory<>("gameName"));
+            platformCol.setCellValueFactory(new PropertyValueFactory<>("platform"));
+            releaseYearCol.setCellValueFactory(new PropertyValueFactory<>("yearOfRelease"));
+            genreCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
+            publisherCol.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+            naSalesCol.setCellValueFactory(new PropertyValueFactory<>("naSales"));
+            euSalesCol.setCellValueFactory(new PropertyValueFactory<>("euSales"));
+            jpSalesCol.setCellValueFactory(new PropertyValueFactory<>("jpSales"));
+            otherSalesCol.setCellValueFactory(new PropertyValueFactory<>("otherSales"));
+            globalSalesCol.setCellValueFactory(new PropertyValueFactory<>("globalSales"));
 
             videoGameSalesTable.setItems(salesList);
 

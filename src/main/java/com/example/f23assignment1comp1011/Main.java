@@ -21,9 +21,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml"));
-        FXMLLoader fxmlLoaderTable = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Scene scene2 = new Scene(fxmlLoaderTable.load());
         stage.setTitle("Video Game Sales by Platform!");
         stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // icon taken from: https://www.flaticon.com/free-icon/sales_2040672
         stage.setScene(scene);
@@ -31,7 +29,6 @@ public class Main extends Application {
     }
 
     public static void switchToBarChart(ActionEvent event) throws IOException {
-        VideoGameSalesController.setBarChartLoaded(false);
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
@@ -42,8 +39,6 @@ public class Main extends Application {
     }
 
     public static void switchToTableView(ActionEvent event) throws IOException {
-        VideoGameSalesController.setBarChartLoaded(true);
-        VideoGameSalesController.setTableViewLoaded(false);
         Parent root = FXMLLoader.load(Main.class.getResource("video-game-sales-table-view.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
