@@ -56,7 +56,7 @@ public class SalesTableViewController implements Initializable {
 
     @FXML
     void switchToBarChartView(ActionEvent event) throws IOException {
-        Main.switchToBarChart(event);
+        Main.switchToBarChart(event); // switch to bar chart button trigger to call the method from Main when the button is pressed
     }
 
     @Override
@@ -72,7 +72,6 @@ public class SalesTableViewController implements Initializable {
                 euSalesCol,
                 jpSalesCol,
                 otherSalesCol,
-                globalSalesCol); // Everything inside the initialize method is executed when the program is run. This means that the call to
-        // getVideoGameSalesFromDB will be made and the barChart will get populated right after the program is run.
+                globalSalesCol); // passing all arguments into the method
     }
 }

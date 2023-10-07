@@ -42,7 +42,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(Main.class.getResource("video-game-sales-table-view.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
-        stage.setTitle("Table View for Video Game Sales by Platform!");
+        stage.setTitle("Table View for Video Game Sales!");
         stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // icon taken from: https://www.flaticon.com/free-icon/sales_2040672
         stage.setScene(scene);
         stage.show();

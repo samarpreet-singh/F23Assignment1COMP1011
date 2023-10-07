@@ -26,6 +26,9 @@ public class DBUtility {
     /**
      * This is our connectURL which zeroes in on the specific database we want to connect to.
      *
+     * MYSQL MAVEN DEPENDENCY IS CRUCIAL FOR CONNECTION -> https://mvnrepository.com/artifact/mysql/mysql-connector-java
+     * DB CONNECTION ALSO REQUIRES VPN CONNECTION TO THE SERVER!!!
+     *
      * jdbc:mysql -> The database driver
      * 172.31.22.43 -> IP Address of the AWS server from CSTECH
      * 3306 -> Port Number of the MySQL Server
@@ -71,9 +74,20 @@ public class DBUtility {
     }
 
     /**
-     * This method is going to get the video game sales data from the database we have, then add that data to the bar chart.
+     * This method is going to get the video game sales data from the database we have, then add that data to a TABLE VIEW.
      *
-     * @param  -> The barchart to which the retrieved data is to be added.
+     * @param videoGameSalesTable -> the TableView where we want to populate
+     * @param idCol -> The ID column in the table
+     * @param gameNameCol -> The Game Name column in the table
+     * @param platformCol -> The Platform column in the table
+     * @param releaseYearCol -> The Release Year column in the table
+     * @param genreCol -> The Genre column in the table
+     * @param publisherCol -> The Publisher column in the table
+     * @param naSalesCol -> The NA Sales column in the table
+     * @param euSalesCol -> The EU Sales column in the table
+     * @param jpSalesCol -> The JP Sales column in the table
+     * @param otherSalesCol -> The Other Sales column in the table
+     * @param globalSalesCol -> The Global Sales column in the table
      */
     public static void getTableViewDataFromDB(TableView<VideoGameSales> videoGameSalesTable,
                                               TableColumn<VideoGameSales, Integer> idCol,
@@ -88,18 +102,18 @@ public class DBUtility {
                                               TableColumn<VideoGameSales, Double> otherSalesCol,
                                               TableColumn<VideoGameSales, Double> globalSalesCol)
     {
-        String sql = "SELECT * FROM video_game_sales ORDER BY global_sales DESC";
-        ObservableList<VideoGameSales> salesList = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM video_game_sales ORDER BY global_sales DESC"; // creating our select statement to populate the table
+        ObservableList<VideoGameSales> salesList = FXCollections.observableArrayList(); // created an ObservableList which will be used to bulk-inject data into the TableView
 
         try(
              Connection conn = DriverManager.getConnection(connectURL, dbUser, password);
-             Statement statement = conn.createStatement(); // No need to use PreparedStatement as user is not inputting anything.
+             Statement statement = conn.createStatement();
              ResultSet resultSet = statement.executeQuery(sql);
         )
         {
-            // looping over the returned result set until all required data has been added to the bar chart
+            // looping over the returned result set until all required data has been added to salesList
             while (resultSet.next())
-            {
+            { // using salesList.add to add a VideoGameSales object to it in each iteration that uses the resultSet results as arguments, which are linked to setters in the constructor. This way, all data being parsed through is also being validated at the same time! :)
                 salesList.add(new VideoGameSales(resultSet.getInt("id"), resultSet.getString("game_name"), resultSet.getString("platform"), resultSet.getInt("year_of_release"), resultSet.getString("genre"),
                         resultSet.getString("publisher"),
                         resultSet.getDouble("na_sales"),
@@ -109,6 +123,7 @@ public class DBUtility {
                         resultSet.getDouble("global_sales")));
             }
 
+            // PropertyValueFactory invokes the Getters for each of the passed instance variable strings from VideoGameSales, it does so for each VideoGameSales object that is created in the while loop above and used to render the TableView.
             idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
             gameNameCol.setCellValueFactory(new PropertyValueFactory<>("gameName"));
             platformCol.setCellValueFactory(new PropertyValueFactory<>("platform"));
@@ -121,7 +136,7 @@ public class DBUtility {
             otherSalesCol.setCellValueFactory(new PropertyValueFactory<>("otherSales"));
             globalSalesCol.setCellValueFactory(new PropertyValueFactory<>("globalSales"));
 
-            videoGameSalesTable.setItems(salesList);
+            videoGameSalesTable.setItems(salesList); // setting the items in the TableView to the created salesList with all required data after using while loop
 
         } catch (Exception e)
         {

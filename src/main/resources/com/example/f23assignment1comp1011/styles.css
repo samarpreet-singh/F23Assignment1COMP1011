@@ -8,76 +8,69 @@
 .root{ /* will be applied to everything in the highest level container */
     -fx-font-size: 20px;
     -fx-font-family: sans-serif;
-    -fx-background-image: url("images/background.png");
+    -fx-background-image: url("images/background.jpg");
     -fx-background-size: cover;
 }
 
-.label{
-    -fx-text-fill: white;
+.label {
+    -fx-text-fill: #ffffff;
 }
 
-#header{
-    -fx-font-size: 40px;
+/* Button Styles */
+.button {
+    -fx-background-radius: 30;
+    -fx-font-weight: bold;
+    -fx-border-radius: 30;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #4CAF50;
+    -fx-cursor: hand;
 }
 
-.button{
-    -fx-background-radius: 20pt;
-    -fx-border-radius: 20pt;
+.button:hover {
+    -fx-background-color: #45a049;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 0);
+}
+
+.button:pressed {
+    -fx-background-color: #357d38;
 }
 
 .chart-legend {
-    -fx-background-color: #8503f9; /* Set legend background color */
+    -fx-background-color: #8503f9;
 }
 
-/* Styling the TableView */
 .table-view {
-    -fx-background-color: #f0f0f0; /* Background color for the table */
+    -fx-background-color: #d3adff;
 }
 
-/* Styling the TableColumns */
 .table-column {
-    -fx-background-color: #4CAF50; /* Background color for headers */
-    -fx-text-fill: white; /* Text color for headers */
+    -fx-background-color: #e3ceff;
     -fx-font-size: 14px;
+    -fx-alignment: center;
 }
 
-/* Alternating row colors */
-.table-row-cell:odd {
-    -fx-background-color: #f9f9f9; /* Alternate row background color */
+.table-view .column-header .label {
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
 }
 
-/* Hover effect on rows */
-.table-row-cell:hover {
-    -fx-background-color: #e0e0e0; /* Hovered row background color */
-}
-
-/* Styling the cell contents */
-.table-cell {
-    -fx-text-fill: #333; /* Text color for cell contents */
-    -fx-alignment: center; /* Alignment of cell contents */
-}
-
-/* Highlighted cell */
-.table-cell:filled:selected {
-    -fx-background-color: #2196F3; /* Selected cell background color */
-    -fx-text-fill: white; /* Selected cell text color */
-}
-
-/* Styling the scrollbar */
 .scroll-bar:vertical {
-    -fx-background-color: #e0e0e0; /* Scrollbar background color */
+    -fx-background-color: #fdf2c5;
 }
 
-/* Custom styling for scrollbar buttons (up and down) */
 .increment-button, .decrement-button {
-    -fx-background-color: #4CAF50; /* Scrollbar button background color */
-    -fx-background-radius: 0; /* Remove button border radius */
+    -fx-background-color: #f589cd;
+    -fx-background-radius: 2px;
 }
 
-/* Hide vertical scrollbar track */
-.scroll-bar:vertical .track {
-    -fx-background-color: transparent;
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #c1aef6;
+    -fx-background-radius: 8px;
 }
 
-/* Custom styling for scrollbar thumb (dr
-
+.table-view .column-header-background .filler {
+    -fx-background-color: #e3ceff;
+    -fx-padding: 1em;
+}

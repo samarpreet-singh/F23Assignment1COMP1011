@@ -21,14 +21,12 @@ public class SalesBarChartController implements Initializable {
     private BarChart<?, ?> barChart;
 
     @FXML
-    void switchToTableView(ActionEvent event) throws IOException {
+    void switchToTableView(ActionEvent event) throws IOException { // switch to table view button trigger to call the method from Main when the button is pressed
         Main.switchToTableView(event);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        DBUtility.getBarChartDataFromDB(barChart); // Everything inside the initialize method is executed when the program is run. This means that the call to
-        // getVideoGameSalesFromDB will be made and the barChart will get populated right after the program is run.
+        DBUtility.getBarChartDataFromDB(barChart);
     }
 }

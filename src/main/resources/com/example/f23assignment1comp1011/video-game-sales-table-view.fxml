@@ -10,10 +10,10 @@
 
 <AnchorPane minHeight="720.0" minWidth="1280.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f23assignment1comp1011.SalesTableViewController">
    <children>
-      <VBox alignment="TOP_CENTER" minHeight="720.0" minWidth="1280.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+      <VBox alignment="TOP_CENTER" layoutX="50.0" layoutY="192.0" minHeight="720.0" minWidth="1280.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="192.0">
          <children>
-            <Label alignment="TOP_RIGHT" text="Video Game Sales Data" />
-            <TableView fx:id="videoGameSalesTable" prefHeight="419.0" prefWidth="1134.0" stylesheets="@styles.css">
+            <Label alignment="TOP_RIGHT" text="Video Game Sales Data (In Million(s))" />
+            <TableView fx:id="videoGameSalesTable" prefHeight="419.0" prefWidth="1134.0" stylesheets="@styles.css" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="idCol" prefWidth="87.0" text="ID" />
                 <TableColumn fx:id="gameNameCol" prefWidth="145.0" text="Game Name" />
@@ -27,6 +27,9 @@
                   <TableColumn fx:id="otherSalesCol" prefWidth="107.0" text="Other Sales" />
                   <TableColumn fx:id="globalSalesCol" prefWidth="115.0" text="Global Sales" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             <Button mnemonicParsing="false" onAction="#switchToBarChartView" text="Switch to Bar Chart View" />
          </children>
