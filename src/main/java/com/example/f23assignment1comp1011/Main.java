@@ -28,26 +28,6 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void switchToBarChart(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("video-game-sales-view.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Video Game Sales by Platform!");
-        stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // icon taken from: https://www.flaticon.com/free-icon/sales_2040672
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void switchToTableView(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("video-game-sales-table-view.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setTitle("Table View for Video Game Sales!");
-        stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/icon.png"))); // icon taken from: https://www.flaticon.com/free-icon/sales_2040672
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public static void main(String[] args) {
         launch();
     }

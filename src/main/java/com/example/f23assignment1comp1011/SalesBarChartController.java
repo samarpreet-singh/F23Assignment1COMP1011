@@ -21,12 +21,14 @@ public class SalesBarChartController implements Initializable {
     private BarChart<?, ?> barChart;
 
     @FXML
-    void switchToTableView(ActionEvent event) throws IOException { // switch to table view button trigger to call the method from Main when the button is pressed
-        Main.switchToTableView(event);
+    void switchToTableView(ActionEvent event) throws IOException { // switch to table view button trigger to call the method from SceneChanger when the button is pressed
+        SceneChanger.changeScenes(event, "video-game-sales-table-view.fxml", "Table View for Video Game Sales!");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DBUtility.getBarChartDataFromDB(barChart);
+        barChart.getData().add(DBUtility.getBarChartDataFromDB()); // chartData (with all data added from the while loop in getBarChartDataFromDB) is
+        // added to the barChart This populates the bar chart when the application is run!
+        barChart.getYAxis().setLabel("Total Global Sales (in Million(s))"); // Setting the YAxis label for the barchart
     }
 }

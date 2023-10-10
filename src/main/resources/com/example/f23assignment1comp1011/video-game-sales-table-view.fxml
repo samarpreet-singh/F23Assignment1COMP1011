@@ -13,7 +13,7 @@
       <VBox alignment="TOP_CENTER" layoutX="50.0" layoutY="192.0" minHeight="720.0" minWidth="1280.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="192.0">
          <children>
             <Label alignment="TOP_RIGHT" text="Video Game Sales Data (In Million(s))" />
-            <TableView fx:id="videoGameSalesTable" prefHeight="419.0" prefWidth="1134.0" stylesheets="@styles.css" VBox.vgrow="ALWAYS">
+            <TableView fx:id="videoGameSalesTable" stylesheets="@styles.css" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="idCol" prefWidth="87.0" text="ID" />
                 <TableColumn fx:id="gameNameCol" prefWidth="145.0" text="Game Name" />
